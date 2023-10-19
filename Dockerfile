@@ -4,10 +4,11 @@ WORKDIR /app
 
 COPY go.mod go.mod
 COPY go.sum go.sum
+ENV GOPROXY=https://goproxy.io
 RUN go mod download
 
 COPY main.go .
-RUN GOPROXY=https://goproxy.io go build -o kubevela-gitops-demo main.go
+RUN go build -o kubevela-gitops-demo main.go
 
 FROM alpine:3.10
 WORKDIR /app
