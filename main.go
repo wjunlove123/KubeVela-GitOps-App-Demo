@@ -11,7 +11,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-const VERSION = "BADVERSION"
+const VERSION = "0.2.0"
 
 func main() {
 	pwd := os.Getenv("DB_PASSWORD")
