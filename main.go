@@ -11,7 +11,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
-const VERSION = "0.2.0"
+const VERSION = "0.2.2"
 
 func main() {
 	pwd := os.Getenv("DB_PASSWORD")
@@ -75,7 +75,7 @@ func InsertInitData(db *sql.DB) {
 	}
 	defer stmt.Close()
 
-	_, err = stmt.Exec("KubeVela2", "It's another test user")
+	_, err = stmt.Exec("KubeVela3", "It's third test user")
 	if err != nil {
 		panic(err)
 	}
