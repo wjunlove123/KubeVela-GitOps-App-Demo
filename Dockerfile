@@ -7,10 +7,11 @@ COPY go.sum go.sum
 RUN go mod download
 
 COPY main.go .
-RUN go build -o kubevela-demo-cicd-app main.go
+ENV GOPROXY=https://goproxy.io
+RUN go build -o kubevela-gitops-demo main.go
 
 FROM alpine:3.10
 WORKDIR /app
-COPY --from=builder /app/kubevela-demo-cicd-app /app/kubevela-demo-cicd-app
-ENTRYPOINT ./kubevela-demo-cicd-app
+COPY --from=builder /app/kubevela-gitops-demo /app/kubevela-gitops-demo
+ENTRYPOINT ./kubevela-gitops-demo
 EXPOSE 8088
