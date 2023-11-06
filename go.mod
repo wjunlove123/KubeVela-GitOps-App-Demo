@@ -1,4 +1,4 @@
-module github.com/cnych/KubeVela-GitOps-App-Demo
+module github.com/wjunlove123/KubeVela-GitOps-App-Demo
 
 go 1.16
 
